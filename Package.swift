@@ -11,7 +11,7 @@ pDependencies += [
     .package(url: "https://github.com/qiu198022/nio-locked-value.git", from: "0.1.0"),
     .package(url: "https://github.com/qiu198022/async-network.git", from: "0.4.2"),
 //    .package(path: "../../async-network"),
-    .package(url: "https://github.com/qiu198022/combine-websocket.git", from: "0.3.0"),
+    .package(url: "https://github.com/qiu198022/combine-websocket.git", from: "0.3.1"),
 //    .package(path: "../../combine-websocket"),
     .package(url: "https://github.com/qiu198022/common-utils.git", from: "0.1.3"),
 //    .package(path: "../../common-utils"),
