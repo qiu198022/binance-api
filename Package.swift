@@ -8,16 +8,16 @@ var tDependencies = [PackageDescription.Target.Dependency]()
 
 pDependencies += [
     .package(url: "https://github.com/apple/swift-crypto.git", "1.0.0" ... "5.0.0"),
-    .package(url: "https://github.com/zhtut/nio-locked-value.git", from: "0.1.0"),
-    .package(url: "https://github.com/zhtut/async-network.git", from: "0.4.2"),
+    .package(url: "https://github.com/qiu198022/nio-locked-value.git", from: "0.1.0"),
+    .package(url: "https://github.com/qiu198022/async-network.git", from: "0.4.2"),
 //    .package(path: "../../async-network"),
-    .package(url: "https://github.com/zhtut/combine-websocket.git", from: "0.3.0"),
+    .package(url: "https://github.com/qiu198022/combine-websocket.git", from: "0.3.0"),
 //    .package(path: "../../combine-websocket"),
-    .package(url: "https://github.com/zhtut/common-utils.git", from: "0.1.3"),
+    .package(url: "https://github.com/qiu198022/common-utils.git", from: "0.1.3"),
 //    .package(path: "../../common-utils"),
-    .package(url: "https://github.com/zhtut/default-codable.git", from: "1.0.3"),
+    .package(url: "https://github.com/qiu198022/default-codable.git", from: "1.0.3"),
 //    .package(path: "../../default-codable"),
-    .package(url: "https://github.com/zhtut/logging-kit.git", from: "0.1.5"),
+    .package(url: "https://github.com/qiu198022/logging-kit.git", from: "0.1.5"),
 //    .package(path: "../../logging-kit"),
 ]
 
