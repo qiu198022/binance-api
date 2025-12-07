@@ -17,7 +17,7 @@ pDependencies += [
 //    .package(path: "../../common-utils"),
     .package(url: "https://github.com/qiu198022/default-codable.git", from: "1.0.3"),
 //    .package(path: "../../default-codable"),
-    .package(url: "https://github.com/qiu198022/logging-kit.git", from: "0.1.5"),
+    .package(url: "https://github.com/qiu198022/logging-kit.git", from: "0.1.7"),
 //    .package(path: "../../logging-kit"),
 ]
 
