@@ -111,6 +111,10 @@ public enum APIKeyType: Sendable {
     case ed25519
 }
 
+public enum APIEnviroment: Sendable {
+    case sandbox
+    case production
+}
 /// api配置
 /// https://developers.binance.com/docs/zh-CN/binance-spot-api-docs/rest-api/request-security
 public class APIConfig {
@@ -126,10 +130,11 @@ public class APIConfig {
     }
     
     // 从文件中读取配置文件
-    public func set(_ apiKey: String, secretKey: String, keyType: APIKeyType = .hmac) throws {
+    public func set(_ apiKey: String, secretKey: String, keyType: APIKeyType = .hmac, apiEnv: APIEnviroment = .sandbox) throws {
         self.apiKey = apiKey
         self.secretKey = secretKey
         self.keyType = keyType
+        self.apiEnviroment = apiEnv
         
         if keyType == .ed25519 {
             // 处理私钥
@@ -137,6 +142,7 @@ public class APIConfig {
         }
     }
     
+    var apiEnviroment: APIEnviroment = .sandbox
     var keyType: APIKeyType = .hmac
     private var apiKey: String?
     private var secretKey: String?
@@ -163,13 +169,37 @@ public class APIConfig {
         public var wsBaseURL: String
     }
     
-    //public let spot = URLGroup(httpBaseURL: "https://api.binance.com",wsBaseURL: "wss://stream.binance.com:443/ws")
-    //public let feature = URLGroup(httpBaseURL: "https://fapi.binance.com",wsBaseURL: "wss://fstream.binance.com/ws")
+    public var spot: URLGroup {
+        switch self.apiEnviroment {
+            case .production:
+                return URLGroup(
+                    httpBaseURL: "https://api.binance.com",
+                    wsBaseURL: "wss://stream.binance.com:443/ws"
+                )
+            case .sandbox:
+                return URLGroup(
+                    httpBaseURL: "https://testnet.binance.vision/api",
+                    wsBaseURL: "wss://stream.testnet.binance.vision/ws"
+                )
+            }
+        }
     
-    public let spot = URLGroup(httpBaseURL: "https://testnet.binance.vision/api",
-                                      wsBaseURL: "wss://stream.testnet.binance.vision/ws")
-    public let feature = URLGroup(httpBaseURL: "https://testnet.binancefuture.com/api",
-                                         wsBaseURL: "wss://fstream.binancefuture.com/ws")
+    public var future: URLGroup {
+            switch self.apiEnviroment {
+            case .production:
+                return URLGroup(
+                    httpBaseURL: "https://fapi.binance.com",
+                    wsBaseURL: "wss://fstream.binance.com/ws"
+                )
+            case .sandbox:
+                return URLGroup(
+                    httpBaseURL: "https://testnet.binancefuture.com/api",
+                    wsBaseURL: "wss://fstream.binancefuture.com/ws"
+                )
+            }
+        }
+    
+
     
     
     // 初始化 - 直接使用私钥文本内容

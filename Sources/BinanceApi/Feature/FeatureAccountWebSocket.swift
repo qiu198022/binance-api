@@ -151,7 +151,7 @@ public class FeatureAccountWebSocket: @unchecked Sendable {
     func isolatedOpen() async {
         do {
             let key = try await createListenKey()
-            let baseURL = APIConfig.shared.feature.wsBaseURL
+            let baseURL = APIConfig.shared.future.wsBaseURL
             let url = "\(baseURL)/\(key)"
             logInfo("开始连接账户WS：\(url)")
             ws.url = URL(string: url)

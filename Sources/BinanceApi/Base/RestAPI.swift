@@ -92,7 +92,7 @@ public struct RestAPI {
         if newPath.hasPrefix("/api/") || newPath.hasPrefix("/sapi/") {
             baseURL = APIConfig.shared.spot.httpBaseURL
         } else if newPath.hasPrefix("/fapi/") {
-            baseURL = APIConfig.shared.feature.httpBaseURL
+            baseURL = APIConfig.shared.future.httpBaseURL
         } else {
             print("暂时不支持path: \(newPath)")
             throw URLError(.badURL)

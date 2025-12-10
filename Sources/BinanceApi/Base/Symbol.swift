@@ -113,7 +113,7 @@ public extension Symbol {
         case .spot:
             return APIConfig.shared.spot.wsBaseURL
         case .feature:
-            return APIConfig.shared.feature.wsBaseURL
+            return APIConfig.shared.future.wsBaseURL
         }
     }
 }
