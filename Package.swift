@@ -13,7 +13,7 @@ pDependencies += [
 //    .package(path: "../../async-network"),
     .package(url: "https://github.com/qiu198022/combine-websocket.git", from: "0.3.1"),
 //    .package(path: "../../combine-websocket"),
-    .package(url: "https://github.com/qiu198022/common-utils.git", from: "0.1.4"),
+    .package(url: "https://github.com/qiu198022/common-utils.git", from: "0.1.5"),
 //    .package(path: "../../common-utils"),
     .package(url: "https://github.com/qiu198022/default-codable.git", from: "1.0.3"),
 //    .package(path: "../../default-codable"),
