@@ -60,6 +60,36 @@ public struct FeatureAccount: Codable, Sendable {
         public var maxWithdrawAmount: String
         /// "updateTime": 1625474304765             // 更新时间
         public var updateTime: Int
+        
+        public init(
+                asset: String = "USDT",
+                walletBalance: String = "0.00000000",
+                unrealizedProfit: String = "0.00000000",
+                marginBalance: String = "0.00000000",
+                maintMargin: String = "0.00000000",
+                initialMargin: String = "0.00000000",
+                positionInitialMargin: String = "0.00000000",
+                openOrderInitialMargin: String = "0.00000000",
+                crossWalletBalance: String = "0.00000000",
+                crossUnPnl: String = "0.00000000",
+                availableBalance: String = "0.00000000",
+                maxWithdrawAmount: String = "0.00000000",
+                updateTime: Int = 0
+            ) {
+                self.asset = asset
+                self.walletBalance = walletBalance
+                self.unrealizedProfit = unrealizedProfit
+                self.marginBalance = marginBalance
+                self.maintMargin = maintMargin
+                self.initialMargin = initialMargin
+                self.positionInitialMargin = positionInitialMargin
+                self.openOrderInitialMargin = openOrderInitialMargin
+                self.crossWalletBalance = crossWalletBalance
+                self.crossUnPnl = crossUnPnl
+                self.availableBalance = availableBalance
+                self.maxWithdrawAmount = maxWithdrawAmount
+                self.updateTime = updateTime
+            }
     }
     
     public var assets: [Asset]
