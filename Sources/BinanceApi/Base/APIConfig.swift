@@ -178,7 +178,7 @@ public class APIConfig {
                 )
             case .sandbox:
                 return URLGroup(
-                    httpBaseURL: "https://testnet.binance.vision/api",
+                    httpBaseURL: "https://testnet.binance.vision",
                     wsBaseURL: "wss://stream.testnet.binance.vision/ws"
                 )
             }
@@ -193,7 +193,7 @@ public class APIConfig {
                 )
             case .sandbox:
                 return URLGroup(
-                    httpBaseURL: "https://testnet.binancefuture.com/api",
+                    httpBaseURL: "https://testnet.binancefuture.com",
                     wsBaseURL: "wss://fstream.binancefuture.com/ws"
                 )
             }
