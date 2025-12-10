@@ -164,6 +164,7 @@ public class FeatureAccountManager: @unchecked Sendable {
         assets = acc.assets
         positions = acc.positions ?? []
         log(isRefresh: true)
+        accountPublisher.send()
     }
     
     public func log(isRefresh: Bool = false) {
