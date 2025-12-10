@@ -163,10 +163,13 @@ public class APIConfig {
         public var wsBaseURL: String
     }
     
-    public let spot = URLGroup(httpBaseURL: "https://api.binance.com",
-                                      wsBaseURL: "wss://stream.binance.com:443/ws")
-    public let feature = URLGroup(httpBaseURL: "https://fapi.binance.com",
-                                         wsBaseURL: "wss://fstream.binance.com/ws") // wss://ws-fapi.binance.com/ws-fapi/v1
+    //public let spot = URLGroup(httpBaseURL: "https://api.binance.com",wsBaseURL: "wss://stream.binance.com:443/ws")
+    //public let feature = URLGroup(httpBaseURL: "https://fapi.binance.com",wsBaseURL: "wss://fstream.binance.com/ws")
+    
+    public let spot = URLGroup(httpBaseURL: "https://testnet.binance.vision/api",
+                                      wsBaseURL: "wss://stream.testnet.binance.vision/ws")
+    public let feature = URLGroup(httpBaseURL: "https://testnet.binancefuture.com/api",
+                                         wsBaseURL: "wss://fstream.binancefuture.com/ws")
     
     
     // 初始化 - 直接使用私钥文本内容
