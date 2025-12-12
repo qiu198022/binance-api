@@ -74,23 +74,23 @@ public struct FeatureTradeOrderUpdate: Codable, Sendable {
         /// 持仓方向（例如：LONG、SHORT）
         public let ps: String
         /// 是否为触发平仓单; 仅在条件订单情况下会推送此字段
-        public let cp: Bool?
+        public let cp: Bool
         /// 该交易实现盈亏
-        public let rp: String?
+        public let rp: String
         /// 是否开启条件单触发保护
-        public let pP: Bool?
+        public let pP: Bool
         /// 追踪止损回调比例, 仅在追踪止损单时会推送此字段
-        public let cr: String?
+        public let cr: String
         /// 追踪止损激活价格, 仅在追踪止损单时会推送此字段
-        public let AP: String?
+        public let AP: String
         /// 忽略（此处暂未明确用途，按照接口文档原样保留属性名）
-        public let si: Int?
+        public let si: Int
         /// 忽略（此处暂未明确用途，按照接口文档原样保留属性名）
-        public let ss: Int?
+        public let ss: Int
         /// 自成交防止模式
-        public let V: String?
+        public let V: String
         /// 价格匹配模式
-        public let pm: String?
+        public let pm: String
         /// TIF为GTD的订单自动取消时间
         public let gtd: Int?
     }
@@ -117,7 +117,7 @@ public struct FeatureTradeOrderUpdate: Codable, Sendable {
             closePosition: o.cp,
             symbol: o.s,
             time: o.T,
-            timeInForce: nil,
+            timeInForce: "",
             type: o.o,
             updateTime: E,
             workingType: o.wt,
